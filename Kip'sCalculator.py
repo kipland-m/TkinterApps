@@ -26,14 +26,45 @@ def button_clear():
 def button_add():
     first_int = InputDisplay.get()
     global f_int
+    global math
+    math = 'add'
     f_int = int(first_int)
     InputDisplay.delete(0, tkinter.END)
+def button_subtract():
+    first_int = InputDisplay.get()
+    global f_int
+    global math
+    math = 'subtract'
+    f_int = int(first_int)
+    InputDisplay.delete(0, tkinter.END)
+def button_multiply():
+    first_int = InputDisplay.get()
+    global f_int
+    global math
+    math = 'multiply'
+    f_int = int(first_int)
+    InputDisplay.delete(0, tkinter.END)
+def button_divide():
+    first_int = InputDisplay.get()
+    global f_int
+    global math
+    math = 'divide'
+    f_int = int(first_int)
+    InputDisplay.delete(0, tkinter.END)
+
 
 def button_submit():
     second_int = InputDisplay.get()
     InputDisplay.delete(0, tkinter.END)
-    InputDisplay.insert(0, f_int + int(second_int))
-    
+    if math == 'add':
+        InputDisplay.insert(0, f_int + int(second_int))
+    elif math == 'subtract':
+        InputDisplay.insert(0, f_int - int(second_int))
+    elif math == 'multiply':
+        InputDisplay.insert(0, f_int * int(second_int))
+    elif math == 'divide':
+        InputDisplay.insert(0, f_int / int(second_int))
+
 
 # Defines the buttons 1-0
 button_1 = tkinter.Button(root, text='1',padx=40,pady=20,command=lambda:button_click(1))
@@ -47,30 +78,39 @@ button_8 = tkinter.Button(root, text='8',padx=40,pady=20,command=lambda:button_c
 button_9 = tkinter.Button(root, text='9',padx=40,pady=20,command=lambda:button_click(9))
 button_0 = tkinter.Button(root, text='0',padx=40,pady=20,command=lambda:button_click(0))
 
-# Defines function buttons (Add,Clear,Equals)
-button_add = tkinter.Button(root, text='+',padx=39,pady=20,command=button_add)
+# Defines function buttons (Clear,Equals)
+
 button_clear = tkinter.Button(root, text='Clear',padx=79,pady=20,command=button_clear)
 button_submit = tkinter.Button(root, text='=',padx=91,pady=20,command=button_submit)
+
+# Defines Operator Buttons
+button_add = tkinter.Button(root, text='+',padx=39,pady=20,command=button_add)
+button_subtract = tkinter.Button(root, text='-',padx=41,pady=20,command=button_subtract)
+button_multiply = tkinter.Button(root, text='*',padx=40,pady=20,command=button_multiply)
+button_divide = tkinter.Button(root, text='/',padx=39,pady=20,command=button_divide)
 
 # Display buttons to screen
 
 button_1.grid(row=3,column=0)
 button_2.grid(row=3,column=1)
 button_3.grid(row=3,column=2)
-
 button_4.grid(row=2,column=0)
 button_5.grid(row=2,column=1)
 button_6.grid(row=2,column=2)
-
 button_7.grid(row=1,column=0)
 button_8.grid(row=1,column=1)
 button_9.grid(row=1,column=2)
-
 button_0.grid(row=4,column=0)
 
-button_clear.grid(row=4,column=1,columnspan=2)
+button_clear.grid(row=5,column=1,columnspan=2)
+button_submit.grid(row=6,column=1,columnspan=2)
+
 button_add.grid(row=5,column=0)
-button_submit.grid(row=5,column=1,columnspan=2)
+button_subtract.grid(row=6,column=0)
+button_divide.grid(row=4,column=1)
+button_multiply.grid(row=4,column=2)
+
+
 
 
 
