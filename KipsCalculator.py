@@ -7,11 +7,6 @@ import tkinter
 root = tkinter.Tk()
 root.title("Kip's Calculator")
 
-# TO DO:
-# Implement Subtract, Divide, and Multiply Buttons
-
-
-
 InputDisplay = tkinter.Entry(root, width='35', borderwidth='5')
 InputDisplay.grid(row=0,column=0,columnspan=3,padx=10,pady=10)
 
@@ -23,6 +18,8 @@ def button_click(integer):
 def button_clear():
     InputDisplay.delete(0, tkinter.END)
 
+
+# Below are the defined functions to let the calculator know what operation you would like to perform upon a button press
 def button_add():
     first_int = InputDisplay.get()
     global f_int
