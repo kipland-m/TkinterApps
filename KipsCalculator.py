@@ -6,6 +6,7 @@ import tkinter
 
 root = tkinter.Tk()
 root.title("Kip's Calculator")
+root.iconbitmap(r'C:\Users\kip_m\Desktop\Python\.ico Files\calculator.ico')
 
 InputDisplay = tkinter.Entry(root, width='35', borderwidth='5')
 InputDisplay.grid(row=0,column=0,columnspan=3,padx=10,pady=10)
