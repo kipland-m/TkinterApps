@@ -85,9 +85,9 @@ button_submit = tkinter.Button(root, text='=',padx=91,pady=20,command=button_sub
 
 # Defines Operator Buttons
 button_add = tkinter.Button(root, text='+',padx=39,pady=20,command=button_add)
-button_subtract = tkinter.Button(root, text='-',padx=41,pady=20,command=button_subtract)
+button_subtract = tkinter.Button(root, text='-',padx=40,pady=20,command=button_subtract)
 button_multiply = tkinter.Button(root, text='*',padx=40,pady=20,command=button_multiply)
-button_divide = tkinter.Button(root, text='/',padx=39,pady=20,command=button_divide)
+button_divide = tkinter.Button(root, text='/',padx=40,pady=20,command=button_divide)
 
 # Display buttons to screen
 
@@ -109,12 +109,6 @@ button_add.grid(row=5,column=0)
 button_subtract.grid(row=6,column=0)
 button_divide.grid(row=4,column=1)
 button_multiply.grid(row=4,column=2)
-
-
-
-
-
-
 
 
 root.mainloop()
